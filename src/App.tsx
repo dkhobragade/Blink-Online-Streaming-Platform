@@ -1,13 +1,11 @@
+import { useState } from 'react'
 import './App.css'
-import Button from './Components/LowLevel/Button'
+import PageLayout from './Components/LowLevel/PageLayout'
+import Sider from './Components/LowLevel/Sider'
+import Content from './Components/PageLevel/Content'
 
 function App() {
-    return (
-        <div>
-            Blink - Online Streaming Paltform
-            <Button text="Subscribe to watch" type="primary" ghost={true} size="large" />
-        </div>
-    )
+    return <PageLayout sider={<Sider />} content={<Content />}></PageLayout>
 }
 
 export default App
