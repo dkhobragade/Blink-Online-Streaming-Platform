@@ -6,6 +6,7 @@ import Sider from './Components/LowLevel/Sider'
 import TextInput from './Components/LowLevel/TextInput'
 import Content from './Components/PageLevel/Content'
 import Login from './Components/PageLevel/Login'
+import TestLogin from './Components/PageLevel/TestLogin'
 
 function App() {
     const onUserNameChange = (value: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,7 +19,9 @@ function App() {
 
     return (
         <>
-            <Login />
+            {/* <Login /> */}
+            <TestLogin />
+
             {/* <PageLayout sider={<Sider />} content={<Content />}></PageLayout> */}
             {/* <TextInput onChange={(e) => onUserNameChange(e)} />
             <PasswordInput onChange={(e) => onPasswordChange(e)} /> */}

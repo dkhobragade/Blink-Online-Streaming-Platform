@@ -9,3 +9,86 @@
 .large-fz {
     font-size: 180px;
 }
+
+
+
+.clapperboard {
+    width: 400px;
+    border: 2px solid #000;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.top {
+    display: flex;
+}
+
+.stripe {
+    width: 16.66%;
+    height: 40px;
+}
+
+.stripe.black {
+    background: #000;
+}
+
+.stripe.red {
+    background: #FF0000;
+}
+
+.stripe.yellow {
+    background: #FFFF00;
+}
+
+.stripe.green {
+    background: #00FF00;
+}
+
+.stripe.blue {
+    background: #0000FF;
+}
+
+.stripe.white {
+    background: violet;
+}
+
+.bottom {
+    padding: 10px;
+}
+
+.top-row,
+.mid-row,
+.bottom-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box {
+    flex: 1;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #000;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.box.roll,
+.box.scene,
+.box.take,
+.box.fps {
+    width: 20%;
+}
+
+.box.timecode {
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.box.prod,
+.box.dir,
+.box.cam {
+    width: 32%;
+}
