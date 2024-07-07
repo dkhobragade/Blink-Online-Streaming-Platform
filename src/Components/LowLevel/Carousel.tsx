@@ -1,4 +1,3 @@
-import { Carousel as CarouselCard } from 'antd'
 import React from 'react'
 
 interface Props {
@@ -15,9 +14,5 @@ export default function Carousel(props: Props) {
             </>
         )
     }
-    return (
-        <CarouselCard arrows infinite={false}>
-            {showCarouselData()}
-        </CarouselCard>
-    )
+    return <></>
 }

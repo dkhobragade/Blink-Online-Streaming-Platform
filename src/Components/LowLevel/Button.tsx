@@ -1,4 +1,4 @@
-import { Button as Btn, MantineSize } from '@mantine/core'
+import { Button as Btn, MantineSize, rem } from '@mantine/core'
 interface Props {
     text: string
     loading?: boolean
@@ -13,6 +13,7 @@ interface Props {
 export default function Button(props: Props) {
     return (
         <Btn
+            mt={rem(15)}
             className={props.classNames}
             size={props.size}
             loading={props.loading}

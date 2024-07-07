@@ -1,13 +1,7 @@
-import { Menu, MenuProps } from 'antd'
 import { menuItem, preparePromise } from '../../constant'
-import { MenuInfo } from 'rc-menu/lib/interface'
 import { useEffect } from 'react'
 
 export default function Sider() {
-    const onMenuItemsClick = (info: MenuInfo) => {
-        console.log(info)
-    }
-
     useEffect(() => {
         testURl()
     }, [])
@@ -33,7 +27,7 @@ export default function Sider() {
         )
     }
 
-    return <Menu onClick={(info) => onMenuItemsClick(info)} mode="inline" items={menuItem}></Menu>
+    return <></>
 
     // return <>{showMenu()}</>
 }

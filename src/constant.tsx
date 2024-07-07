@@ -1,4 +1,3 @@
-import { MenuItemType } from 'antd/es/menu/interface'
 import {
     DesktopOutlined,
     HomeOutlined,
@@ -9,7 +8,7 @@ import {
 } from '@ant-design/icons'
 import { url } from 'inspector'
 
-export const menuItem: MenuItemType[] = [
+export const menuItem = ([] = [
     {
         icon: <UserOutlined />,
         title: 'My Space',
@@ -40,7 +39,7 @@ export const menuItem: MenuItemType[] = [
         title: 'Categories',
         key: '',
     },
-]
+])
 
 export const api_key = '5c61281db1640e948982784ce33529dc'
 
@@ -83,7 +82,7 @@ export const preparePromise = (type: string, url: string, params?: Record<string
         ...params,
     }
 
-    const updatedURl = `${https}${url}?api_key=${api_key}`
+    const updatedURl = `${https}${url}?api_key=${process.env.REACT_APP_API_KEY}`
 
     if (type === 'get') {
         return apiGet(updatedURl).then((resp) => processApiResponse(resp))
