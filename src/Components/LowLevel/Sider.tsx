@@ -13,9 +13,9 @@ export default function Sider() {
     }, [])
 
     const testURl = () => {
-        preparePromise('tv/popular').then((resp) => {
-            console.log('resp', resp)
-        })
+        // preparePromise('tv/popular').then((resp) => {
+        //     console.log('resp', resp)
+        // })
     }
 
     const showMenu = () => {

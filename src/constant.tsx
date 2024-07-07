@@ -7,6 +7,7 @@ import {
     SearchOutlined,
     UserOutlined,
 } from '@ant-design/icons'
+import { url } from 'inspector'
 
 export const menuItem: MenuItemType[] = [
     {
@@ -47,10 +48,46 @@ export const https = 'https://api.themoviedb.org/3/'
 
 export const img_https = 'https://image.tmdb.org/t/p/w500/'
 
-export const preparePromise = (url: string, options?: any) => {
-    const updatedURl = `${https}${url}?api_key=${api_key}`
-
-    return fetch(updatedURl, options).then((resp) => {
+const apiGet = (url: string) => {
+    const init: RequestInit = {
+        method: 'GET',
+    }
+    return fetch(url, init).then((resp) => {
         return resp.json()
     })
+}
+
+const apiPost = (url: string, requestBody?: Record<string, string>) => {
+    const requestPayload: Record<string, any> = {
+        method: 'POST',
+    }
+    const formData = new FormData()
+    for (const key in requestBody) {
+        formData.set(key, requestBody[key])
+    }
+
+    if (requestBody) {
+        requestPayload['body'] = formData
+    }
+    return fetch(url, requestPayload).then((resp) => {
+        return resp.json()
+    })
+}
+
+const processApiResponse = (response: any) => {
+    return response
+}
+
+export const preparePromise = (type: string, url: string, params?: Record<string, string>) => {
+    const payload = {
+        ...params,
+    }
+
+    const updatedURl = `${https}${url}?api_key=${api_key}`
+
+    if (type === 'get') {
+        return apiGet(updatedURl).then((resp) => processApiResponse(resp))
+    } else {
+        return apiPost(updatedURl, payload).then((resp) => processApiResponse(resp))
+    }
 }

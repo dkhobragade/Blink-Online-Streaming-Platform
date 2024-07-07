@@ -1,12 +1,13 @@
-import { Button as Btn } from 'antd'
-
+import { Button as Btn, MantineSize } from '@mantine/core'
 interface Props {
     text: string
-    type: 'primary' | 'default' | 'dashed' | 'text' | 'link'
     loading?: boolean
-    ghost?: boolean
-    size?: 'small' | 'middle' | 'large'
+    size?: MantineSize
     classNames?: string
+    fullWidth?: boolean
+    onClick?: () => void
+    color?: string
+    radius?: MantineSize
 }
 
 export default function Button(props: Props) {
@@ -14,9 +15,11 @@ export default function Button(props: Props) {
         <Btn
             className={props.classNames}
             size={props.size}
-            ghost={props.ghost}
-            type={props.type}
             loading={props.loading}
+            fullWidth={props.fullWidth}
+            onClick={props.onClick}
+            radius={props.radius}
+            color={props.color}
         >
             {props.text}
         </Btn>

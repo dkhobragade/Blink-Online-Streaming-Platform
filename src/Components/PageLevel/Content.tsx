@@ -11,9 +11,9 @@ export default function Content() {
     }, [])
 
     const fetchAPIData = () => {
-        preparePromise('trending/all/day').then((resp) => {
-            setApiData(processMovieListData(resp))
-        })
+        // preparePromise('trending/all/day').then((resp) => {
+        //     setApiData(processMovieListData(resp))
+        // })
     }
 
     const processMovieListData = (resp: any) => {
