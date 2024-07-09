@@ -6,7 +6,7 @@ interface Props {
     height?: string
     maxWidth?: string
     width?: string
-    spacing?: MantineSpacing
+    spacing?: any
     colStyle?: 'min' | 'max'
     padding?: MantineSpacing
     colTemplate?: number[]

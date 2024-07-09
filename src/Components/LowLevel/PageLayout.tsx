@@ -1,25 +1,41 @@
+import { AppShell, Button, rem } from '@mantine/core'
+import { useDisclosure } from '@mantine/hooks'
 import { useState } from 'react'
+import MenuList from './MenuList'
 
-interface Props {
-    sider: React.ReactNode
-    content: React.ReactNode
-    isCollapse?: boolean
-}
-
-export default function PageLayout(props: Props) {
-    const [isCollapsed, setIsCollapsed] = useState<boolean>(true)
-
-    // const onClickCollapse = (collapsed: boolean, type: CollapseType) => {
-    //     setIsCollapsed(collapsed)
-    // }
-
-    const onMouseEnter = () => {
-        setIsCollapsed(false)
-    }
+export default function PageLayout() {
+    const [isNavBarOpen, setIsNavBarOpen] = useState<boolean>(false)
+    const [mobileOpened, { toggle: toggleMobile }] = useDisclosure()
 
     const onMouseLeave = () => {
-        setIsCollapsed(true)
+        setIsNavBarOpen(false)
     }
 
-    return <></>
+    const onMouseEnter = () => {
+        setIsNavBarOpen(true)
+    }
+
+    return (
+        <AppShell
+            // withBorder={false}
+            padding="md"
+            navbar={{
+                width: rem(60),
+                breakpoint: 'sm',
+                collapsed: { mobile: !mobileOpened, desktop: false },
+            }}
+        >
+            <AppShell.Navbar style={{ backgroundColor: '#F96167' }}>
+                <MenuList />
+            </AppShell.Navbar>
+            <AppShell.Main style={{ backgroundColor: '#F9E795' }}>
+                <Button onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} visibleFrom="sm">
+                    Toggle navbar
+                </Button>
+                <Button onClick={toggleMobile} hiddenFrom="sm">
+                    Toggle navbar
+                </Button>
+            </AppShell.Main>
+        </AppShell>
+    )
 }
