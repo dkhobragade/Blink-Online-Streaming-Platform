@@ -6,6 +6,7 @@ interface Props {
     color?: string
     strong?: boolean
     fontFamily?: string
+    onClick?: () => void
 }
 
 export default function Text(props: Props) {
@@ -15,6 +16,8 @@ export default function Text(props: Props) {
             c={props.color ?? 'white'}
             fw={props.strong ? 'bold' : 'normal'}
             ff={props.fontFamily}
+            style={{ cursor: 'pointer' }}
+            onClick={props.onClick}
         >
             {props.text}
         </Title>

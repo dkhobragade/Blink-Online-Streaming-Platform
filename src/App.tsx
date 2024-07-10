@@ -1,14 +1,22 @@
 import './App.css'
 import PageLayout from './Components/LowLevel/PageLayout'
-import Login from './Components/PageLevel/Login'
 import { Routes, Route } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import LoginWeiget from './Components/PageLevel/LoginWeiget';
 
 function App() {
+    const pathName = window.location.pathname
+
     return (
-        <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/homepage" element={<PageLayout />} />
-        </Routes>
+        <>
+            <ToastContainer />
+            <Routes>
+                <Route path="/" element={<LoginWeiget url={pathName} />} />
+                <Route path='/signUp' element={<LoginWeiget url={pathName} />} />
+                <Route path="/homepage" element={<PageLayout />} />
+            </Routes>
+        </>
     )
 }
 
