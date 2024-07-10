@@ -1,37 +1,25 @@
-import React, { useEffect, useState } from 'react'
 import { Card, rem } from '@mantine/core'
+import React, { useState } from 'react'
+import ElemsRow from '../LowLevel/ElemsRow'
 import TextInput from '../LowLevel/TextInput'
 import PasswordInput from '../LowLevel/PasswordInput'
 import Button from '../LowLevel/Button'
 import Text from '../LowLevel/Title'
-import ElemsRow from '../LowLevel/ElemsRow'
-import { useNavigate } from 'react-router-dom'
-import { auth } from '../../Firebase'
-import { signInWithEmailAndPassword } from 'firebase/auth'
 import notify from '../../Themes/notify'
-import FlexContainer from '../LowLevel/FlexContainer'
+import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth'
+import { useNavigate } from 'react-router-dom'
 
 interface InitialVal {
     userName: string
     password: string
 }
 
-export default function Login() {
+const auth = getAuth()
+
+export default function SignUp() {
     const [initialVal, setInitialVal] = useState<InitialVal>({} as InitialVal)
     const [signInBtn, setSignInBtn] = useState<boolean>(false)
     const navigate = useNavigate()
-
-    useEffect(() => {
-        initilizedEmptyData()
-    }, [])
-
-    const initilizedEmptyData = () => {
-        const _initialVal = { ...initialVal }
-        _initialVal.userName = ''
-        _initialVal.password = ''
-        setInitialVal(_initialVal)
-    }
-
 
     const onUserNameChange = (value: React.ChangeEvent<HTMLInputElement>) => {
         const _initialVal = { ...initialVal }
@@ -45,25 +33,22 @@ export default function Login() {
         setInitialVal(_initialVal)
     }
 
+
+
     const onSignInClick = () => {
         if (initialVal?.userName.trim() === '' || initialVal?.password.trim() === '') return
         setSignInBtn(true)
-        signInWithEmailAndPassword(auth, initialVal.userName, initialVal.password).then((UserCredential) => {
+        createUserWithEmailAndPassword(auth, initialVal.userName, initialVal.password).then((UserCredential) => {
             const user = UserCredential.user;
-            navigate('/homePage')
-            notify.success("login in successfully")
+            navigate('/')
+            notify.success("Account added successfully")
         }).catch((error) => {
             notify.error(error.message)
         }).finally(() => {
             setSignInBtn(false)
-            initilizedEmptyData()
         })
     }
 
-    const onSignUp = () => {
-        console.log("ok")
-        navigate('/signUp')
-    }
 
     return (
         <Card
@@ -76,7 +61,7 @@ export default function Login() {
             }}
         >
             <ElemsRow spacing="lg">
-                <Text fontFamily="Georgia" text="Sign In" color="#E50914" size={2} strong />
+                <Text fontFamily="Georgia" text="Sign Up" color="#E50914" size={2} strong />
                 <TextInput
                     value={initialVal.userName}
                     size="sm"
@@ -96,17 +81,12 @@ export default function Login() {
                     size="sm"
                     color="#E50914"
                     onClick={onSignInClick}
-                    text="Sign In"
+                    text="Submit"
                     fullWidth={true}
                     loading={signInBtn}
                 />
             </ElemsRow>
-            <FlexContainer justifyContent="end" py={rem(15)}  >
-                <ElemsRow numCols={2} >
-                    <Text text="New to Blink -" />
-                    <Text text="Sign Up" onClick={onSignUp} />
-                </ElemsRow>
-            </FlexContainer>
         </Card>
     )
 }
+

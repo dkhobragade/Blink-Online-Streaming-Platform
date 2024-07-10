@@ -6,11 +6,12 @@ import { BrowserRouter } from 'react-router-dom'
 import '../src/Styles/common.scss'
 import '@mantine/core/styles.css'
 import { MantineProvider } from '@mantine/core'
+import { theme } from './Themes/theme'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
-    <MantineProvider>
+    <MantineProvider theme={theme}>
         <BrowserRouter basename={`${process.env.PUBLIC_URL}/`}>
             <App />
         </BrowserRouter>
