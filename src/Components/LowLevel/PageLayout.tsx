@@ -1,7 +1,8 @@
-import { AppShell, Button, rem } from '@mantine/core'
+import { AppShell, rem } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { useState } from 'react'
 import MenuList from './MenuList'
+import Content from '../PageLevel/Content'
 
 export default function PageLayout() {
     const [isNavBarOpen, setIsNavBarOpen] = useState<boolean>(false)
@@ -15,10 +16,11 @@ export default function PageLayout() {
         setIsNavBarOpen(true)
     }
 
+
     return (
         <AppShell
             // withBorder={false}
-            padding="md"
+            // padding="md"
             navbar={{
                 width: rem(60),
                 breakpoint: 'sm',
@@ -29,13 +31,9 @@ export default function PageLayout() {
                 <MenuList />
             </AppShell.Navbar>
             <AppShell.Main style={{ backgroundColor: '#F9E795' }}>
-                <Button onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} visibleFrom="sm">
-                    Toggle navbar
-                </Button>
-                <Button onClick={toggleMobile} hiddenFrom="sm">
-                    Toggle navbar
-                </Button>
+                <Content />
             </AppShell.Main>
         </AppShell>
     )
 }
+
