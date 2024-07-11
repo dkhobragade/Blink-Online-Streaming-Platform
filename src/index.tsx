@@ -7,6 +7,8 @@ import '../src/Styles/common.scss'
 import '@mantine/core/styles.css'
 import { MantineProvider } from '@mantine/core'
 import { theme } from './Themes/theme'
+import '@mantine/carousel/styles.css';
+import '@vidstack/react/player/styles/base.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 

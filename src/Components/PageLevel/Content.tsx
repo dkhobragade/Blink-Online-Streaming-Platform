@@ -1,39 +1,38 @@
-import React, { useEffect, useState } from 'react'
-import { img_https, preparePromise } from '../../constant'
-import { useSearchParams } from 'react-router-dom'
+import { useState } from 'react'
 import Carousel from '../LowLevel/Carousel'
+import { movies_list } from '../../constant';
+
+
+interface ApiDataType {
+    movies: Record<string, string>[],
+    webshows: Record<string, string>[]
+}
+
 
 export default function Content() {
-    const [apiData, setApiData] = useState<any>()
+    const [apiData, setApiData] = useState<ApiDataType>({} as ApiDataType)
 
-    useEffect(() => {
-        fetchAPIData()
-    }, [])
+    // useEffect(() => {
+    //     fetchAPIData()
+    // }, [])
 
-    const fetchAPIData = () => {
-        // preparePromise('trending/all/day').then((resp) => {
-        //     setApiData(processMovieListData(resp))
-        // })
-    }
+    // const fetchAPIData = async () => {
+    //     const _apiData = { ...apiData }
+    //     const moviesCollection = collection(db, "movies_data");
+    //     const moviesSnapshot = await getDocs(moviesCollection);
+    //     const moviesList = moviesSnapshot.docs.map(doc => doc.data());
+    //     const webCollection = collection(db, "web_data");
+    //     const webSnapshot = await getDocs(webCollection);
+    //     const webList = webSnapshot.docs.map(doc => doc.data());
+    //     _apiData.movies = moviesList
+    //     _apiData.webshows = webList
+    //     setApiData(_apiData)
+    // }
 
-    const processMovieListData = (resp: any) => {
-        if (resp.results.length > 0) {
-            return resp.results.map((item: any) => ({
-                id: item.id,
-                title: item.title,
-                original_title: item.original_title,
-                overview: item.overview,
-                backdrop_path: item.backdrop_path,
-                image: `${img_https}${item.poster_path}`,
-            }))
-        }
-    }
-
-    console.log('apiData', apiData)
 
     return (
         <div style={{ color: 'red' }}>
-            <Carousel children={apiData ?? []} />
+            <Carousel children={movies_list} />
         </div>
     )
 }
