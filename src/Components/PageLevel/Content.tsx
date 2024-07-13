@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Carousel from '../LowLevel/Carousel'
-import { movies_list } from '../../constant';
+import { carouselList } from '../../constant';
 
 
 interface ApiDataType {
@@ -31,8 +31,8 @@ export default function Content() {
 
 
     return (
-        <div style={{ color: 'red' }}>
-            <Carousel children={movies_list} />
+        <div>
+            <Carousel children={carouselList} />
         </div>
     )
 }
