@@ -413,47 +413,62 @@ export const webSeriesData = [
 export const carouselList = [
     {
         id: '1',
-        name: 'showtime',
+        name: 'Showtime',
         year: '2024',
+        info: `An epic saga of legacy and ambition, get a glimpse behind the multimillion-dollar industry of Bollywood, nepotism and power struggles at the top.`,
         genre: 'Drama,Celebration,Celebrities',
         image: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6458/1720718526458-i',
         video: 'https://www.youtube.com/watch?v=tAXew1iKCnw',
+        posterImg: 'https://img10.hotstar.com/image/upload/f_auto,h_148/sources/r1/cms/prod/346/1720718500346-t',
         play: true
     },
     {
         id: '2',
         name: 'Salaar',
         year: '2023',
+        info: `In the crime-infested Khansaar, Prince Varadha sets to ascend the throne. But a coup d'état is planned! And there’s only one man to help reclaim power: Deva.`,
         genre: 'Action,Thriller',
         image: 'https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/8730/1707996958730-i',
         video: 'https://www.youtube.com/watch?v=Pr2jBvbiy04',
+        posterImg: 'https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/8973/1707996938973-t',
         play: true
     },
     {
         id: '3',
         name: 'Brahmastra Part One :Shiva',
         year: '2022',
+        info: `A journey of fantasy, action and romance comes to life as Shiva enters the Astraverse! He discovers true love and also, the power of fire within him.`,
         genre: 'Fantasy,Adventure,Action',
         image: 'https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/6312/1714673666312-i',
         video: 'https://www.youtube.com/watch?v=BUjXzrgntcY',
-        play: true
-    },
-    {
-        id: '4',
-        name: 'Do aur do pyar',
-        year: '2024',
-        genre: 'Romance,Comedy',
-        image: 'https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/3474/1720172613474-i',
-        video: 'https://www.youtube.com/watch?v=d9Xckupgjsw',
-        play: true
-    },
-    {
-        id: '5',
-        name: 'Sita Ram',
-        year: '2022',
-        genre: 'Romance,Drama,Couples',
-        image: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/3410/1623410-i-5fe8c00b81e1',
-        video: 'https://www.youtube.com/watch?v=3UKsbXQUwqw',
+        posterImg: 'https://img10.hotstar.com/image/upload/f_auto,h_124/sources/r1/cms/prod/6761/1714673646761-t',
         play: true
     },
 ]
+// {
+//     id: '4',
+//     name: 'Do aur do pyar',
+//     year: '2024',
+//     genre: 'Romance,Comedy',
+//     image: 'https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/3474/1720172613474-i',
+//     video: 'https://www.youtube.com/watch?v=d9Xckupgjsw',
+//     posterImg: 'https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/4077/1720172484077-t',
+//     play: true
+// },
+// {
+//     id: '5',
+//     name: 'Sita Ram',
+//     year: '2022',
+//     genre: 'Romance,Drama,Couples',
+//     image: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/3410/1623410-i-5fe8c00b81e1',
+//     video: 'https://www.youtube.com/watch?v=3UKsbXQUwqw',
+//     posterImg: 'https://img10.hotstar.com/image/upload/f_auto,h_124/sources/r1/cms/prod/3408/1623408-t-9ec4d70dcf2b',
+//     play: true
+// },
+
+const randomFontSize = ['Bradley Hand, cursive', 'URW Chancery L, cursive', 'Chalkduster, fantasy', 'Apple Chancery, cursive']
+
+
+export const randomNumberGenerator = (max: number) => {
+    return Math.random() * (max - 0)
+}

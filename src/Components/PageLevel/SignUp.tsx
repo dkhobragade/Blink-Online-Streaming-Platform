@@ -79,7 +79,7 @@ export default function SignUp() {
                 <Button
                     radius="lg"
                     size="sm"
-                    color="#E50914"
+                    bgColor="#E50914"
                     onClick={onSignInClick}
                     text="Submit"
                     fullWidth={true}
