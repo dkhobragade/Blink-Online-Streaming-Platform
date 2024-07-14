@@ -1,4 +1,5 @@
-import { Button as Btn, MantineSize, rem } from '@mantine/core'
+import { Button as Btn, MantineSize, rem, StyleProp } from '@mantine/core'
+
 interface Props {
     text: string
     loading?: boolean
@@ -6,8 +7,10 @@ interface Props {
     classNames?: string
     fullWidth?: boolean
     onClick?: () => void
-    color?: string
+    bgColor?: string
+    textColor?: string
     radius?: MantineSize
+    width?: StyleProp<React.CSSProperties['width']>
 }
 
 export default function Button(props: Props) {
@@ -20,7 +23,8 @@ export default function Button(props: Props) {
             fullWidth={props.fullWidth}
             onClick={props.onClick}
             radius={props.radius}
-            color={props.color}
+            color={props.bgColor}
+            style={{ color: props.textColor }}
         >
             {props.text}
         </Btn>

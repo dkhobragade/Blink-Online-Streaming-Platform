@@ -94,7 +94,7 @@ export default function Login() {
                 <Button
                     radius="lg"
                     size="sm"
-                    color="#E50914"
+                    bgColor="#E50914"
                     onClick={onSignInClick}
                     text="Sign In"
                     fullWidth={true}
