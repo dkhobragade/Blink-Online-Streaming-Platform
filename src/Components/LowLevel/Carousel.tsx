@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
 import { Carousel as Slides } from '@mantine/carousel';
 import { IconArrowLeft, IconArrowRight, IconPointFilled, IconVolume, IconVolumeOff } from '@tabler/icons-react';
-import { Box, rem, Tooltip } from '@mantine/core';
+import { Box, rem } from '@mantine/core';
 import { MediaPlayer, MediaProvider, Poster } from '@vidstack/react';
 import ElemsRow from './ElemsRow';
 import Text from './Title';
 import { Image } from '@mantine/core'
 import Button from './Button';
+import FlexContainer from './FlexContainer';
 
 interface Props {
     children: any
@@ -25,28 +26,26 @@ interface CarouselItem {
 
 export default function Carousel(props: Props) {
     const [carouselList, setCarouselList] = useState<CarouselItem[]>(props.children);
-    const [currentSlideIndex, setCurrentSlideIndex] = useState<string>("1")
-    const [isMuted, setIsMuted] = useState<boolean>(true);
 
     useEffect(() => {
         setCarouselList(props.children);
     }, [props.children]);
 
     const getControl = (index: number) => {
-        setCurrentSlideIndex(String(index))
-    }
-
-    const toggleMute = () => {
         const updatedList = carouselList.map((item) => ({
             ...item,
-            play: item.id === currentSlideIndex ? !item.play : item.play,
+            play: true
+        }))
+        setCarouselList(updatedList)
+    }
+
+    const toggleMute = (id: string, sound: boolean) => {
+        const updatedList = carouselList.map((item) => ({
+            ...item,
+            play: item.id === id ? !sound : item.play,
         }));
         setCarouselList(updatedList);
-        setIsMuted(!isMuted);
     };
-
-    // console.log("carouselList", carouselList)
-
 
     const carouselData = () => {
         return <>
@@ -55,7 +54,7 @@ export default function Carousel(props: Props) {
                     <MediaPlayer style={{
                         width: '100%',
                         height: '550px',
-                    }} clip-start-time="35" poster={item.image} posterLoad="visible" loop title={item.movies_name} autoPlay={true} muted={true} src={`${item.video}?vq=hd720`}>
+                    }} clip-start-time="35" poster={item.image} posterLoad="visible" loop title={item.movies_name} autoPlay={true} muted={item.play} src={`${item.video}?vq=hd720`}>
                         <MediaProvider >
                             <Poster src={item.image} />
                         </MediaProvider>
@@ -75,21 +74,24 @@ export default function Carousel(props: Props) {
                                             <Text text={`${item.year}`} />
                                         </ElemsRow>
                                     </Box>
+                                    <ElemsRow numCols={1}>
+                                        <Text text={item.genre.split(',').join(' | ')} />
+                                    </ElemsRow>
                                     <Text text={item.info} fontFamily={`"Inter",sans-serif`} />
                                     <ElemsRow numCols={2}>
                                         <Button text='Watch Now !' bgColor='white' textColor='black' />
                                     </ElemsRow>
                                 </ElemsRow>
                             </Box>
-                            <Tooltip label={"kgk"} opened>
+                            <FlexContainer alignItems="end" justifyContent="end" >
                                 <Box style={{ zIndex: 10 }}>
-                                    {isMuted ? (
-                                        <IconVolumeOff style={{ cursor: "pointer" }} color='white' onClick={() => toggleMute()} size={24} />
+                                    {item.play ? (
+                                        <IconVolumeOff style={{ cursor: "pointer" }} color='white' onClick={() => toggleMute(item.id, item.play)} size={24} />
                                     ) : (
-                                        <IconVolume style={{ cursor: "pointer" }} color='white' onClick={() => toggleMute()} size={24} />
+                                        <IconVolume style={{ cursor: "pointer" }} color='white' onClick={() => toggleMute(item.id, item.play)} size={24} />
                                     )}
                                 </Box>
-                            </Tooltip>
+                            </FlexContainer>
                         </ElemsRow>
                     </Box>
                 </Slides.Slide>
@@ -99,12 +101,11 @@ export default function Carousel(props: Props) {
 
 
 
-    return <>
-        <Slides pt={2} loop slideGap="0" onSlideChange={getControl}
-            nextControlIcon={<IconArrowRight style={{ width: rem(16), height: rem(16) }} />}
-            previousControlIcon={<IconArrowLeft style={{ width: rem(16), height: rem(16) }} />}>
-            {carouselData()}
-        </Slides>
-    </>
+    return <Slides pt={2} loop slideGap="0" onSlideChange={getControl}
+        nextControlIcon={<IconArrowRight style={{ width: rem(16), height: rem(16), }} />}
+        previousControlIcon={<IconArrowLeft style={{ width: rem(16), height: rem(16) }} />}>
+        {carouselData()}
+    </Slides>
+
 
 }
