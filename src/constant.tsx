@@ -466,6 +466,52 @@ export const carouselList = [
 //     play: true
 // },
 
+
+export const CarouselListData = [
+    {
+        id: '1',
+        name: 'Meter',
+        year: '2023',
+        image: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/9165/1708610579165-v'
+    },
+    {
+        id: '2',
+        name: 'Ride On',
+        year: '2023',
+        image: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/4593/1708725754593-v'
+    },
+    {
+        id: '3',
+        name: 'Laxmii',
+        year: '2020',
+        image: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7803/1712209007803-v'
+    },
+    {
+        id: '3',
+        name: 'kaala',
+        year: '2018',
+        image: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/old_images/vertical/MOVIE/7977/1000217977/1000217977-v'
+    },
+    {
+        id: '4',
+        name: 'Hungama 2',
+        year: '2021',
+        image: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/9962/1710936549962-v'
+    },
+    {
+        id: '5',
+        name: 'Aiyaary',
+        year: '2018',
+        image: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/457/30457-v'
+    },
+    {
+        id: '6',
+        name: 'A Thursday',
+        year: '2023',
+        image: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/5416/1713534275416-v'
+    },
+]
+
 const randomFontSize = ['Bradley Hand, cursive', 'URW Chancery L, cursive', 'Chalkduster, fantasy', 'Apple Chancery, cursive']
 
 
