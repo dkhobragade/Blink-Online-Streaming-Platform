@@ -30,7 +30,7 @@ export default function PageLayout() {
             <AppShell.Navbar style={{ backgroundColor: '#F96167' }}>
                 <MenuList />
             </AppShell.Navbar>
-            <AppShell.Main style={{ backgroundColor: '#F9E795' }}>
+            <AppShell.Main style={{ backgroundColor: '#0F1014' }}>
                 <Content />
             </AppShell.Main>
         </AppShell>

@@ -34,7 +34,7 @@ export default function Content() {
     return (
         <div style={{ paddingBottom: '100px' }}>
             <Carousel children={carouselList} />
-            <CarouselList />
+            <CarouselList title='Trending' />
         </div>
     )
 }

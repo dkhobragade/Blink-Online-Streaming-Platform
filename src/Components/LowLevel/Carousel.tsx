@@ -39,13 +39,14 @@ export default function Carousel(props: Props) {
         setCarouselList(updatedList)
     }
 
-    const toggleMute = (id: string, sound: boolean) => {
+
+    const toggleSound = (id?: string) => {
         const updatedList = carouselList.map((item) => ({
             ...item,
-            play: item.id === id ? !sound : item.play,
+            play: id ? item.id !== id : true
         }));
         setCarouselList(updatedList);
-    };
+    }
 
     const carouselData = () => {
         return <>
@@ -60,7 +61,7 @@ export default function Carousel(props: Props) {
                         </MediaProvider>
                     </MediaPlayer>
                     <Box p={50} style={{
-                        position: 'absolute', bottom: '20px', color: 'whitesmoke'
+                        position: 'absolute', bottom: '10px', color: 'whitesmoke',
                     }}>
                         <ElemsRow numCols={2} colStyle="min">
                             <Box>
@@ -86,24 +87,25 @@ export default function Carousel(props: Props) {
                             <FlexContainer alignItems="end" justifyContent="end" >
                                 <Box style={{ zIndex: 10 }}>
                                     {item.play ? (
-                                        <IconVolumeOff style={{ cursor: "pointer" }} color='white' onClick={() => toggleMute(item.id, item.play)} size={24} />
+                                        <IconVolumeOff style={{ cursor: "pointer" }} color='white' onClick={() => toggleSound(item.id)} size={24} />
                                     ) : (
-                                        <IconVolume style={{ cursor: "pointer" }} color='white' onClick={() => toggleMute(item.id, item.play)} size={24} />
+                                        <IconVolume style={{ cursor: "pointer" }} color='white' onClick={() => toggleSound()} size={24} />
                                     )}
                                 </Box>
                             </FlexContainer>
                         </ElemsRow>
                     </Box>
-                </Slides.Slide>
-            ))}
+                </Slides.Slide >
+            ))
+            }
         </>
     }
 
 
 
-    return <Slides pt={2} loop slideGap="0" onSlideChange={getControl}
-        nextControlIcon={<IconArrowRight style={{ width: rem(16), height: rem(16), }} />}
-        previousControlIcon={<IconArrowLeft style={{ width: rem(16), height: rem(16) }} />}>
+    return <Slides loop slideGap="0" onSlideChange={getControl}
+        nextControlIcon={<IconArrowRight style={{ width: rem(30), height: rem(100), color: 'white' }} />}
+        previousControlIcon={<IconArrowLeft style={{ width: rem(30), height: rem(100), color: 'white' }} />}>
         {carouselData()}
     </Slides>
 
