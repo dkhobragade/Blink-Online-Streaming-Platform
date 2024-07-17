@@ -472,43 +472,64 @@ export const CarouselListData = [
         id: '1',
         name: 'Meter',
         year: '2023',
-        image: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/9165/1708610579165-v'
+        image: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/9165/1708610579165-v',
+        video: 'https://www.youtube.com/watch?v=oSFjaxnTn90',
+        posterImg: 'https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/4923/1708610594923-t',
+        play: true,
     },
     {
         id: '2',
         name: 'Ride On',
         year: '2023',
-        image: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/4593/1708725754593-v'
+        image: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/4593/1708725754593-v',
+        video: 'https://www.youtube.com/watch?v=A1tnlU2HBTM',
+        posterImg: 'https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/7072/1708725847072-t',
+        play: true,
     },
     {
         id: '3',
         name: 'Laxmii',
         year: '2020',
-        image: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7803/1712209007803-v'
-    },
-    {
-        id: '3',
-        name: 'kaala',
-        year: '2018',
-        image: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/old_images/vertical/MOVIE/7977/1000217977/1000217977-v'
+        image: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7803/1712209007803-v',
+        video: 'https://www.youtube.com/watch?v=AzTYIiRYmv0',
+        posterImg: 'https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/843/1650843-t-18c273d0239e',
+        play: true,
     },
     {
         id: '4',
-        name: 'Hungama 2',
-        year: '2021',
-        image: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/9962/1710936549962-v'
+        name: 'kaala',
+        year: '2018',
+        image: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/old_images/vertical/MOVIE/7977/1000217977/1000217977-v',
+        video: 'https://www.youtube.com/watch?v=pSnMt6h6zk0',
+        posterImg: 'https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/3645/1373645-t-6d1f32e5b5d6',
+        play: true,
     },
     {
         id: '5',
-        name: 'Aiyaary',
-        year: '2018',
-        image: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/457/30457-v'
+        name: 'Hungama 2',
+        year: '2021',
+        image: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/9962/1710936549962-v',
+        video: 'https://www.youtube.com/watch?v=RC8dHEENNHQ',
+        posterImg: 'https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/7223/1707126007223-t',
+        play: true,
     },
     {
         id: '6',
+        name: 'Aiyaary',
+        year: '2018',
+        image: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/457/30457-v',
+        video: 'https://www.youtube.com/watch?v=KcWXKmnZZVo',
+        posterImg: 'https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/5386/1375386-t-a7680d810a1b',
+        play: true,
+    },
+    {
+        id: '7',
         name: 'A Thursday',
         year: '2023',
-        image: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/5416/1713534275416-v'
+        image: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/5416/1713534275416-v',
+        video: 'https://www.youtube.com/watch?v=7O_96yftBRc',
+        posterImg: 'https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/8737/1608737-t-add76c4c5774',
+        play: true
     },
 ]
 
