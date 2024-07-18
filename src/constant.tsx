@@ -476,6 +476,7 @@ export const CarouselListData = [
         video: 'https://www.youtube.com/watch?v=oSFjaxnTn90',
         posterImg: 'https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/4923/1708610594923-t',
         play: true,
+        info: 'Upon his father’s insistence, Arjun becomes a policeman but struggles to find purpose until a conflict with a politician pushes him to take charge for real.',
     },
     {
         id: '2',
@@ -485,6 +486,7 @@ export const CarouselListData = [
         video: 'https://www.youtube.com/watch?v=A1tnlU2HBTM',
         posterImg: 'https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/7072/1708725847072-t',
         play: true,
+        info: 'On the verge of losing it all, down-on-luck stuntman Luo and his horse become overnight celebrities when their fight with debt collectors goes viral.',
     },
     {
         id: '3',
@@ -494,6 +496,7 @@ export const CarouselListData = [
         video: 'https://www.youtube.com/watch?v=AzTYIiRYmv0',
         posterImg: 'https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/843/1650843-t-18c273d0239e',
         play: true,
+        info: `Aasif's belief in logic and science shatters when he gets possessed by a ghost. What starts as a comical journey soon unearths a dark secret.`,
     },
     {
         id: '4',
@@ -503,6 +506,7 @@ export const CarouselListData = [
         video: 'https://www.youtube.com/watch?v=pSnMt6h6zk0',
         posterImg: 'https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/3645/1373645-t-6d1f32e5b5d6',
         play: true,
+        info: 'Kaala unites the people of Dharavi against a politician, who tries to evict the residents. When the fight becomes personal, how will Kaala survive it?',
     },
     {
         id: '5',
@@ -512,6 +516,7 @@ export const CarouselListData = [
         video: 'https://www.youtube.com/watch?v=RC8dHEENNHQ',
         posterImg: 'https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/7223/1707126007223-t',
         play: true,
+        info: 'The Kapoors, Bajajs and Tiwaris lead picture-perfect lives until a young woman named Vaani arrives with an utterly cute bundle of joy in tow.',
     },
     {
         id: '6',
@@ -521,6 +526,7 @@ export const CarouselListData = [
         video: 'https://www.youtube.com/watch?v=KcWXKmnZZVo',
         posterImg: 'https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/5386/1375386-t-a7680d810a1b',
         play: true,
+        info: 'Jai Bakshi, an ex-military man,  pledges to bring the government down. Now it is up to Colonel Abhay Singh, his superior, who has to stop him at all costs.',
     },
     {
         id: '7',
@@ -529,7 +535,8 @@ export const CarouselListData = [
         image: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/5416/1713534275416-v',
         video: 'https://www.youtube.com/watch?v=7O_96yftBRc',
         posterImg: 'https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/8737/1608737-t-add76c4c5774',
-        play: true
+        play: true,
+        info: 'Naina, a playschool teacher, takes 16 students hostage. Rattling the police and the leaders, her demands send shockwaves through the country.',
     },
 ]
 
