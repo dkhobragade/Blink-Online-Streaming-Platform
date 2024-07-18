@@ -52,6 +52,7 @@ export default function CarouselList(props: Props) {
                         className='card'
                         onMouseEnter={() => setHoveredIndex(item.id)}
                         onMouseLeave={() => setHoveredIndex(null)}
+                        style={{ backgroundColor: 'transparent' }}
                     >
                         {hoveredIndex === item.id ? (
                             <Box>
@@ -66,9 +67,9 @@ export default function CarouselList(props: Props) {
                                 >
                                     <MediaProvider />
                                 </MediaPlayer>
-                                <Box style={{ position: 'absolute', bottom: '10px', backgroundColor: "black", height: '100px', width: '100%' }}>
+                                <Box style={{ position: 'absolute', bottom: '50px', height: '100px', width: '100%' }}>
                                     <ElemsRow numCols={2}>
-                                        <Box p={10} w={rem(100)}>
+                                        <Box p={10} w={rem(70)}>
                                             <Image src={item.posterImg} />
                                         </Box>
                                         <FlexContainer alignItems="start" justifyContent="end">
@@ -90,8 +91,19 @@ export default function CarouselList(props: Props) {
                                                 )}
                                             </Box>
                                         </FlexContainer>
-                                        <Button text='Watch Now' bgColor='white' textColor='black' />
                                     </ElemsRow>
+                                    <FlexContainer gap='sm' >
+                                        <ElemsRow spacing='0px' >
+                                            <Box c='White' fz='10px' ta="justify"   >
+                                                <p>
+                                                    {item.info}
+                                                </p>
+                                            </Box>
+                                            <ElemsRow numCols={2}>
+                                                <Button fullWidth={false} size='md' text='Watch Now' marginTop={false} />
+                                            </ElemsRow>
+                                        </ElemsRow>
+                                    </FlexContainer>
                                 </Box>
                             </Box>
                         ) : (

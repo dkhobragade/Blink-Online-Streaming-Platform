@@ -11,20 +11,20 @@ interface Props {
     textColor?: string
     radius?: MantineSize
     width?: StyleProp<React.CSSProperties['width']>
+    marginTop?: boolean
 }
 
 export default function Button(props: Props) {
     return (
         <Btn
-            mt={rem(15)}
-            className={props.classNames}
+            mt={props.marginTop ? rem(15) : 0}
             size={props.size}
             loading={props.loading}
             fullWidth={props.fullWidth}
             onClick={props.onClick}
             radius={props.radius}
             color={props.bgColor}
-            style={{ color: props.textColor }}
+            style={{ color: props.textColor, cursor: 'pointer', zIndex: 100 }}
         >
             {props.text}
         </Btn>
