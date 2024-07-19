@@ -8,7 +8,6 @@ interface Props {
 }
 
 export default function LoginWeiget(props: Props) {
-    console.log("props", props.url)
     return (
         <Box
             w="100%"
