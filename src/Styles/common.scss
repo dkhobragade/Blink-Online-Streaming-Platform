@@ -10,18 +10,6 @@
     font-size: 180px;
 }
 
-.card {
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    transition: background-position 0.3s ease-in-out;
-}
-
 .card:hover {
     width: 300px;
     height: 250px;
@@ -54,12 +42,11 @@
 }
 
 .mantine-Carousel-controls {
-    margin-top: -50px;
+    bottom: 10rem;
 }
 
 .mantine-focus-auto.m_64f58e10.mantine-Carousel-control.m_87cf2631.mantine-UnstyledButton-root {
     background-color: inherit;
-    border: 0px;
 }
 
 .mantine-focus-auto.m_64f58e10.mantine-Carousel-control.m_87cf2631.mantine-UnstyledButton-root:hover {

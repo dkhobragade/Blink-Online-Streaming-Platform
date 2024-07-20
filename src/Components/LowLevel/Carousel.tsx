@@ -101,8 +101,6 @@ export default function Carousel(props: Props) {
         </>
     }
 
-
-
     return <Slides loop slideGap="0" onSlideChange={getControl}
         nextControlIcon={<IconArrowRight style={{ width: rem(30), height: rem(100), color: 'white' }} />}
         previousControlIcon={<IconArrowLeft style={{ width: rem(30), height: rem(100), color: 'white' }} />}>
