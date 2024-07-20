@@ -1,6 +1,5 @@
 import { Carousel } from '@mantine/carousel';
-import { CarouselListData, } from '../../constant';
-import { Box, Paper, rem } from '@mantine/core';
+import { Box, rem } from '@mantine/core';
 import Text from './Title';
 import ElemsRow from './ElemsRow';
 import { IconArrowLeft, IconArrowRight, IconVolume, IconVolumeOff } from '@tabler/icons-react';
@@ -9,19 +8,6 @@ import FlexContainer from './FlexContainer';
 import { MediaPlayer, MediaProvider, } from '@vidstack/react';
 import { useState } from 'react';
 import { Image } from '@mantine/core'
-
-interface CardProps {
-    image: string;
-    name: string;
-    category: string;
-    video: string
-    posterImg: string
-    isHovered: boolean;
-    onHover: () => void;
-    onLeave: () => void;
-    play: boolean
-    id: string
-}
 
 interface Props {
     title: string
@@ -42,34 +28,28 @@ export default function CarouselList(props: Props) {
         setCarouselList(updatedList);
     }
 
+
     const carouselData = () => {
         return <>
             {carouselList.map((item: any) => (
-                <Carousel.Slide>
-                    <Paper
-                        shadow="md"
-                        radius="md"
-                        className='card'
-                        onMouseEnter={() => setHoveredIndex(item.id)}
-                        onMouseLeave={() => setHoveredIndex(null)}
-                        style={{ backgroundColor: 'transparent' }}
-                    >
-                        {hoveredIndex === item.id ? (
-                            <Box>
-                                <MediaPlayer
-                                    style={{ height: '100%' }}
-                                    clip-start-time="35"
-                                    posterLoad="visible"
-                                    loop
-                                    autoPlay={true}
-                                    muted={item.play}
-                                    src={`${item.video}?vq=hd720`}
-                                >
-                                    <MediaProvider />
-                                </MediaPlayer>
-                                <Box style={{ position: 'absolute', bottom: '50px', height: '100px', width: '100%' }}>
+                <Carousel.Slide color='red' c='red' h={rem(270)} className='card' onMouseEnter={() => setHoveredIndex(item.id)}
+                    onMouseLeave={() => setHoveredIndex(null)}>
+                    {hoveredIndex === item.id ? (
+                        <Box>
+                            <MediaPlayer
+                                clip-start-time="35"
+                                posterLoad="visible"
+                                loop
+                                autoPlay={true}
+                                muted={item.play}
+                                src={`${item.video}?vq=hd720`}
+                            >
+                                <MediaProvider />
+                            </MediaPlayer>
+                            <Box p={10} style={{ width: '100%' }}>
+                                <Box style={{ position: 'absolute', width: '90%', bottom: '8.5rem' }}>
                                     <ElemsRow numCols={2}>
-                                        <Box p={10} w={rem(70)}>
+                                        <Box w={rem(70)}>
                                             <Image src={item.posterImg} />
                                         </Box>
                                         <FlexContainer alignItems="start" justifyContent="end">
@@ -92,35 +72,36 @@ export default function CarouselList(props: Props) {
                                             </Box>
                                         </FlexContainer>
                                     </ElemsRow>
-                                    <FlexContainer gap='sm' >
-                                        <ElemsRow spacing='0px' >
-                                            <Box c='White' fz='10px' ta="justify"   >
-                                                <p>
-                                                    {item.info}
-                                                </p>
-                                            </Box>
-                                            <ElemsRow numCols={2}>
-                                                <Button fullWidth={false} size='md' text='Watch Now' marginTop={false} />
-                                            </ElemsRow>
-                                        </ElemsRow>
-                                    </FlexContainer>
                                 </Box>
+                                <FlexContainer gap='sm' >
+                                    <ElemsRow spacing='0px' >
+                                        <Box c='White' fz='10px' ta="justify"   >
+                                            <p>
+                                                {item.info}
+                                            </p>
+                                        </Box>
+                                        <ElemsRow numCols={2}>
+                                            <Button bgColor='#E1E6F0' textColor='grey' fullWidth={false} size='xs' text='Watch Now' marginTop={false} />
+                                        </ElemsRow>
+                                    </ElemsRow>
+                                </FlexContainer>
                             </Box>
-                        ) : (
-                            <div
-                                style={{
-                                    backgroundImage: `url(${item.image})`,
-                                    height: '100%',
-                                    width: '100%',
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'center',
-                                    transition: 'background-position 0.3s ease-in-out',
-                                }}
-                            />
-                        )}
-                    </Paper>
-                </Carousel.Slide>
-            ))}
+                        </Box>
+                    ) : (
+                        <Box
+                            style={{
+                                backgroundImage: `url(${item.image})`,
+                                height: '100%',
+                                width: '100%',
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
+                                transition: 'background-position 1s ease-in-out',
+                            }}
+                        />
+                    )}
+                </Carousel.Slide >
+            ))
+            }
         </>
     }
 
@@ -132,8 +113,8 @@ export default function CarouselList(props: Props) {
                 slideSize="20%"
                 slideGap="lg"
                 slidesToScroll={2}
-                nextControlIcon={<IconArrowRight style={{ width: rem(30), height: rem(100), color: 'white' }} />}
-                previousControlIcon={<IconArrowLeft style={{ width: rem(30), height: rem(100), color: 'white' }} />}
+                nextControlIcon={<IconArrowRight style={{ width: rem(30), height: rem(200), color: 'white' }} />}
+                previousControlIcon={<IconArrowLeft style={{ width: rem(30), height: rem(200), color: 'white' }} />}
                 align="start">
                 {carouselData()}
             </Carousel>
@@ -141,4 +122,3 @@ export default function CarouselList(props: Props) {
     </Box>
 
 }
-

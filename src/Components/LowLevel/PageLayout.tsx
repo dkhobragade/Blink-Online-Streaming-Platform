@@ -27,7 +27,7 @@ export default function PageLayout() {
                 collapsed: { mobile: !mobileOpened, desktop: false },
             }}
         >
-            <AppShell.Navbar style={{ backgroundColor: '#F96167' }}>
+            <AppShell.Navbar style={{ backgroundColor: '#101010' }}>
                 <MenuList />
             </AppShell.Navbar>
             <AppShell.Main style={{ backgroundColor: '#0F1014' }}>
