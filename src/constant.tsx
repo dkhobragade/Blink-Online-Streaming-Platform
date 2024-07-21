@@ -466,6 +466,178 @@ export const carouselList = [
 //     play: true
 // },
 
+// autoplay-trailer-image-container
+
+
+export const tvList = [
+    {
+        id: '1',
+        name: 'Jhanak',
+        year: '2024',
+        image: 'https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/6838/1626838-i-60210c42f1b7',
+        video: 'https://www.youtube.com/watch?v=Km21M36IyfE',
+        posterImg: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/6836/1626836-v-94cf52682493',
+        play: true,
+        info: `For Jhanak, dance is the breath of her life! But a tragedy pushes her into a whirlwind of crushed dreams, failures, and a marriage of convenience.`,
+        genre: 'Couples,Drama,Romance',
+        language: 'hindi'
+    },
+    {
+        id: '2',
+        name: 'Aashiqana',
+        year: '2024',
+        image: 'https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/789/1710251120789-i',
+        video: 'https://www.youtube.com/watch?v=ECKME--igUI',
+        posterImg: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/2405/1713509892405-v',
+        play: true,
+        info: `A series of brutal murders bring Yash and Chikki to Bhumigad. Hot on the trail, they end up unleashing an evil curse.`,
+        genre: 'Action,Drama,Romance,Thriller',
+        language: 'hindi'
+    },
+    {
+        id: '3',
+        name: 'Anupama',
+        year: '2024',
+        image: 'https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/372/1717762910372-i',
+        video: 'https://www.youtube.com/watch?v=-W1RjAs7RTQ',
+        posterImg: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/2272/1717762882272-v',
+        play: true,
+        info: `After a dreamy and ‘oh-so-happening’ America visit, Anupama returns home. With new challenges and old conflicts to resolve, a new journey awaits her.`,
+        genre: 'Drama,Common-Man Struggles',
+        language: 'hindi'
+    },
+    {
+        id: '4',
+        name: 'Yeh Hai Mohabbatein',
+        year: '2019',
+        image: 'https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/7151/1417151-i-f8c57dbdd2b2',
+        video: 'https://www.youtube.com/watch?v=HFeVztSjLi4',
+        posterImg: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/2028/552028-v',
+        play: true,
+        info: `Based on Manju Kapoor's Custody, this is the story of Raman and Ishita, brought together by destiny and their love for Ruhi, Raman's daughter from his ex-wife.`,
+        genre: 'Family,Couple,Family',
+        language: 'hindi'
+    },
+    {
+        id: '5',
+        name: 'Dance 6+',
+        year: '2022',
+        image: 'https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/9056/1706702789056-i',
+        video: 'https://www.youtube.com/watch?v=DbeZWsij6bc',
+        posterImg: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/5472/1055472-v-4fac4c4e1978',
+        play: true,
+        info: `Remo is back with a bang to hunt for the next dance icon with host Raghav, and captains Punit, Shakti and Salman. The biggest dance battle of the year is here!`,
+        genre: 'Dance,Competition,Reality',
+        language: 'hindi'
+    },
+    {
+        id: '6',
+        name: 'Ishqbaaz',
+        year: '2019',
+        image: 'https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/8558/1378558-i-33e318b92766',
+        video: 'https://www.youtube.com/watch?v=bTIMvvFYMq4',
+        posterImg: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/6842/336842-v',
+        play: true,
+        info: `Brothers Shivaay, Omkara and Rudra share an unbreakable bond despite their dysfunctional family. What happens when cupid strikes each of them?`,
+        genre: 'Family,RomCom',
+        language: 'hindi'
+    },
+    {
+        id: '7',
+        name: 'Titlie',
+        year: '2023',
+        image: 'https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/3221/1533221-i-664d9f4a5e62',
+        video: 'https://www.youtube.com/watch?v=wNLGBMkNQFo',
+        posterImg: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/3219/1533219-v-09996613824f',
+        play: true,
+        info: `Obsessed by the notion of fairy tale love, Titlie marries her beau Garv. Soon, the picture-perfect romance turns abusive, forcing her to wrestle with reality.`,
+        genre: 'Drama,Romance',
+        language: 'hindi'
+    },
+
+]
+
+export const List2 = [
+    {
+        id: '1',
+        name: 'Hum do Humare Do',
+        year: '2021',
+        image: 'https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/838/1650838-i-afe211d3bb82',
+        video: 'https://www.youtube.com/watch?v=t3efdEAkMgQ',
+        posterImg: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7395/1713429987395-v',
+        play: true,
+        info: `Self-made man Dhruv and social media star Anya fall in love and decide to marry. Just one problem - he's an orphan. The only solution - make a fake family.`,
+        genre: 'Comedy,Drama,RomCOm'
+    },
+    {
+        id: '2',
+        name: 'Shiddat',
+        year: '2021',
+        image: 'https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/5934/1595934-i-1e582da15bca',
+        video: 'https://www.youtube.com/watch?v=x60tMH7Pz9s',
+        posterImg: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/2912/1710936332912-v',
+        play: true,
+        info: `Love-struck Jaggi can cross the seven seas for his dream girl, Kartika. Even if it means stopping her wedding.`,
+        genre: 'Intense,Romance,RomCOm'
+    },
+    {
+        id: '3',
+        name: 'A GentalMan',
+        year: '2017',
+        image: 'https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/5289/1375289-i-35bf701ac110',
+        video: 'https://www.youtube.com/watch?v=fdg67eALOdo',
+        posterImg: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/migration_retry/movies/1000190811-v',
+        play: true,
+        info: `A tale of mistaken identities where identical-looking Gaurav and Rishi cross paths only to create confusion and chaos in their lives and of those around them.`,
+        genre: 'Action,Spy'
+    },
+    {
+        id: '4',
+        name: 'Bang Bang',
+        year: '2014',
+        image: 'https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/2163/1372163-i-8c9185c277c8',
+        video: 'https://www.youtube.com/watch?v=MGXQ8bE6lW4',
+        posterImg: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/old_images/vertical/MOVIE/4503/1000034503/1000034503-v',
+        play: true,
+        info: `Rajveer sets out to steal the world's most coveted diamond, the Kohinoor, triggering a series of fights, car chases and a revenge plot.`,
+        genre: 'Action,Spy,Cartel'
+    },
+    {
+        id: '5',
+        name: 'Samhaara',
+        year: '2018',
+        image: 'https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/7727/1387727-i-a3d93df9594d',
+        video: 'https://www.youtube.com/watch?v=6KOmRJd5M7M',
+        posterImg: 'https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/2163/1372163-i-8c9185c277c8',
+        play: true,
+        info: `A visually impaired chef, Srishaila's life takes a turn for the worse when the girl he loves, traps him in a murder case.`,
+        genre: 'Action,Romance,Thriller'
+    },
+    {
+        id: '6',
+        name: 'Sanman Re',
+        year: '2016',
+        image: 'https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/993/1370993-i-f9778b2e7eca',
+        video: 'https://www.youtube.com/watch?v=fvQZkpnb764',
+        posterImg: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/old_images/vertical/MOVIE/3421/1000093421/1000093421-v',
+        play: true,
+        info: `An unfortunate event separates a much-in-love couple. However, fate gives them a second chance at happiness. Will luck favour them now?`,
+        genre: 'Couples,Romance'
+    },
+    {
+        id: '7',
+        name: 'Babli Bouncer',
+        year: '2022',
+        image: 'https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/7731/1577731-i-bb0b00ef0e82',
+        video: 'https://www.youtube.com/watch?v=uShGv52y6no',
+        posterImg: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/5616/1355616-v-08a190817b7b',
+        play: true,
+        info: `A first-of-its-kind for her village, Babli takes up a bouncer's job to win over her love, leading to a series of funny and heart-warming events.`,
+        genre: 'Comedy,Small Town'
+    },
+
+]
+
 
 export const CarouselListData = [
     {
