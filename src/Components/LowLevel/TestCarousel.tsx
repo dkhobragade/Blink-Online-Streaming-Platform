@@ -1,18 +1,20 @@
-import { Box, Flex, Image, Button } from '@mantine/core';
-import React, { useState } from 'react';
-import img from '../../Assets/LoginBg.jpg';
+import { Box, Flex, Image, } from '@mantine/core';
+import { useState } from 'react';
 import FlexContainer from './FlexContainer';
 import { List2 } from '../../constant';
+import { MediaPlayer, MediaProvider } from '@vidstack/react';
+import { IconVolume, IconVolumeOff } from '@tabler/icons-react';
 
 const TestCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [backgroundImage, setBackgroundImage] = useState(List2[0].image);
+  const [currentVideo, setCurrentVideo] = useState(List2[0].video)
 
-  const prevItem = (index:any) => {
-    if(index===0){
+  const prevItem = (index: any) => {
+    if (index === 0) {
       setCurrentIndex((prevIndex) => (prevIndex - 1 + List2.length) % List2.length);
     }
-    else{
+    else {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % List2.length);
     }
   };
@@ -31,39 +33,56 @@ const TestCarousel = () => {
     return itemsToShow;
   };
 
-  const handleImageClick = (index:any) => {
-    console.log(index)
-    setBackgroundImage(List2[index].image);
+  const handleImageClick = (index: any) => {
+    setBackgroundImage(List2[index - 1].image);
+    setCurrentVideo(List2[index - 1].video)
   };
 
+  const toggleSound = (id?: any) => {
+    // const updatedList = carouselList.map((item) => ({
+    //     ...item,
+    //     play: id ? item.id !== id : true
+    // }));
+    // setCarouselList(updatedList);
+  }
 
   const getInsideBox = () => {
     return (
-      <Box style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}>
-        <Box style={{ width: '100%' }}>
-          <Flex>
-            {getDisplayedItems().map((item, index) => (
-              <Box
-                key={index}
-                style={{ cursor:'pointer',overflow: 'hidden', borderRadius: '10px', padding: '5px', width: '8rem', height: '5rem', backgroundColor: 'blue', margin: '0 5px' }}
-                onClick={()=>{
-                  prevItem(index)
-                  handleImageClick(item.id)
-                }}
-              >
-                <Image src={item.image} />
-              </Box>
-            ))}
-          </Flex>
-        </Box>
+      <Box className='inner_box zIndex' >
+        <Flex>
+          {getDisplayedItems().map((item, index) => (
+            <Box
+              key={index}
+              className='innerMost_box'
+            >
+              <Image src={item.image} onClick={() => {
+                prevItem(index)
+                handleImageClick(item.id)
+              }} />
+            </Box>
+          ))}
+        </Flex>
+          <FlexContainer alignItems="end" justifyContent="end" >
+            <Box className='volumns zIndex'>
+              {currentIndex ? (
+                <IconVolumeOff className='pointer' color='white' onClick={() => toggleSound(currentIndex)} size={24} />
+              ) : (
+                <IconVolume className='pointer' color='white' onClick={() => toggleSound()} size={24} />
+              )}
+            </Box>
+          </FlexContainer>
       </Box>
     );
   };
 
   return (
-    <Box style={{ width: '100%', height: '35rem', overflow: 'hidden', position: 'relative' }}>
-      <Image src={backgroundImage} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-      <FlexContainer>
+    <Box className='outer_box'>
+      {/* <Image src={backgroundImage} className='img_box' /> */}
+      <MediaPlayer loop muted={true} autoPlay={true} src={`${currentVideo}?vq=hd720`} >
+        <MediaProvider >
+        </MediaProvider>
+      </MediaPlayer>
+      <FlexContainer justifyContent="end" alignItems='end' >
         {getInsideBox()}
       </FlexContainer>
     </Box>

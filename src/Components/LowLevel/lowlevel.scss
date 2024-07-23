@@ -1,0 +1,43 @@
+.outer_box {
+    width: 100%;
+    height: 35rem;
+    overflow: hidden;
+    position: relative
+}
+
+.img_box {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.inner_box {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    height: 100%;
+    position: absolute;
+    margin-bottom: 100px;
+}
+
+.innerMost_box  {
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 8rem;
+    margin: 0 5px;
+}
+
+.zIndex{
+    z-index: 10;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.volumns{
+    position: absolute;
+    bottom: 15%;
+    right: 5%;
+}
