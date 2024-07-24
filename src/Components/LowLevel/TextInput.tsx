@@ -1,4 +1,4 @@
-import Text from '../LowLevel/Title'
+import Title from '../LowLevel/Title'
 import { Input, MantineSize } from '@mantine/core'
 import { IconUserCircle } from '@tabler/icons-react'
 
@@ -15,7 +15,7 @@ interface Props {
 export default function TextInput(props: Props) {
     return (
         <>
-            <Text text={props.text} />
+            <Title text={props.text} />
             <Input
                 autoComplete="one-time-code"
                 radius={props.radius}

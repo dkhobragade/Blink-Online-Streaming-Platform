@@ -4,7 +4,7 @@ import { IconArrowLeft, IconArrowRight, IconPointFilled, IconVolume, IconVolumeO
 import { Box, rem } from '@mantine/core';
 import { MediaPlayer, MediaProvider, Poster } from '@vidstack/react';
 import ElemsRow from './ElemsRow';
-import Text from './Title';
+import Title from './Title';
 import { Image } from '@mantine/core'
 import Button from './Button';
 import FlexContainer from './FlexContainer';
@@ -72,13 +72,13 @@ export default function Carousel(props: Props) {
                                     <Box w={40}>
                                         <ElemsRow numCols={2}>
                                             <IconPointFilled />
-                                            <Text text={`${item.year}`} />
+                                            <Title text={`${item.year}`} />
                                         </ElemsRow>
                                     </Box>
                                     <ElemsRow numCols={1}>
-                                        <Text text={item.genre.split(',').join(' | ')} />
+                                        <Title text={item.genre.split(',').join(' | ')} />
                                     </ElemsRow>
-                                    <Text text={item.info} fontFamily={`"Inter",sans-serif`} />
+                                    <Title text={item.info} fontFamily={`"Inter",sans-serif`} />
                                     <ElemsRow numCols={2}>
                                         <Button text='Watch Now !' bgColor='white' textColor='black' />
                                     </ElemsRow>
