@@ -1,6 +1,5 @@
 import { Carousel } from '@mantine/carousel';
 import { Box, rem } from '@mantine/core';
-import Text from './Title';
 import ElemsRow from './ElemsRow';
 import { IconArrowLeft, IconArrowRight, IconVolume, IconVolumeOff } from '@tabler/icons-react';
 import Button from './Button';
@@ -8,6 +7,7 @@ import FlexContainer from './FlexContainer';
 import { MediaPlayer, MediaProvider, } from '@vidstack/react';
 import { useState } from 'react';
 import { Image } from '@mantine/core'
+import { Text } from '@mantine/core';
 
 interface Props {
     title: string
@@ -32,7 +32,7 @@ export default function CarouselList(props: Props) {
     const carouselData = () => {
         return <>
             {carouselList.map((item: any) => (
-                <Carousel.Slide color='red' c='red' h={rem(270)} className='card' onMouseEnter={() => setHoveredIndex(item.id)}
+                <Carousel.Slide color='red' c='red' h={rem(270)} style={{ cursor: 'pointer' }} className='card' onMouseEnter={() => setHoveredIndex(item.id)}
                     onMouseLeave={() => setHoveredIndex(null)}>
                     {hoveredIndex === item.id ? (
                         <Box>
@@ -108,7 +108,8 @@ export default function CarouselList(props: Props) {
 
     return <Box p={10}>
         <ElemsRow>
-            <Text text={props.title} size={2} strong fontFamily='"Inter",sans-serif' />
+            {/* <Text text={props.title} size={2} strong fontFamily='"Inter",sans-serif' /> */}
+            <Text c="white" >{props.title}</Text>
             <Carousel loop
                 slideSize="20%"
                 slideGap="lg"

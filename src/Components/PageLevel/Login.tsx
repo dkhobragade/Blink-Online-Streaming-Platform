@@ -3,7 +3,8 @@ import { Card, rem } from '@mantine/core'
 import TextInput from '../LowLevel/TextInput'
 import PasswordInput from '../LowLevel/PasswordInput'
 import Button from '../LowLevel/Button'
-import Text from '../LowLevel/Title'
+import Text from '../LowLevel/Text'
+import Title from '../LowLevel/Title'
 import ElemsRow from '../LowLevel/ElemsRow'
 import { useNavigate } from 'react-router-dom'
 import { auth } from '../../Firebase'
@@ -75,36 +76,37 @@ export default function Login() {
                 backgroundColor: 'rgba(58, 61, 60, 0.8)',
             }}
         >
-            <ElemsRow spacing="lg">
-                <Text fontFamily="Georgia" text="Sign In" color="#E50914" size={2} strong />
-                <TextInput
-                    value={initialVal.userName}
-                    size="sm"
-                    radius="lg"
-                    onChange={(e) => onUserNameChange(e)}
-                    text="Email or Mobile Number"
-                />
-                <PasswordInput
-                    value={initialVal.password}
-                    size="sm"
-                    radius="lg"
-                    onChange={(e) => onPasswordChange(e)}
-                    text="Password"
-                />
-                <Button
-                    radius="lg"
-                    size="sm"
-                    bgColor="#E50914"
-                    onClick={onSignInClick}
-                    text="Sign In"
-                    fullWidth={true}
-                    loading={signInBtn}
-                />
-            </ElemsRow>
-            <FlexContainer justifyContent="end" py={rem(15)}  >
-                <ElemsRow numCols={2} >
-                    <Text text="New to Blink -" />
-                    <Text text="Sign Up" onClick={onSignUp} />
+            <FlexContainer>
+                <ElemsRow>
+                    <Title fontFamily="Georgia" text="Sign In" color="#E50914" size={2} strong />
+                    <TextInput
+                        value={initialVal.userName}
+                        size="sm"
+                        radius="lg"
+                        onChange={(e) => onUserNameChange(e)}
+                        text="Email or Mobile Number"
+                    />
+                    <PasswordInput
+                        value={initialVal.password}
+                        size="sm"
+                        radius="lg"
+                        onChange={(e) => onPasswordChange(e)}
+                        text="Password"
+                    />
+                    <Button
+                        radius="lg"
+                        size="sm"
+                        bgColor="#E50914"
+                        onClick={onSignInClick}
+                        text="Sign In"
+                        fullWidth={true}
+                        marginTop={true}
+                        loading={signInBtn}
+                    />
+                    <FlexContainer alignItems="end" justifyContent="end">
+                        <Text text='New to Blink -' size={'xs'} />
+                        <Text text='Sign Up' color='blue' size={'xs'} onClick={onSignUp} />
+                    </FlexContainer>
                 </ElemsRow>
             </FlexContainer>
         </Card>

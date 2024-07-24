@@ -1,4 +1,4 @@
-import { Title } from '@mantine/core'
+import { Title as TitleField} from '@mantine/core'
 
 interface Props {
     text: string
@@ -9,9 +9,9 @@ interface Props {
     onClick?: () => void
 }
 
-export default function Text(props: Props) {
+export default function Title(props: Props) {
     return (
-        <Title
+        <TitleField
             order={props.size ?? 5}
             c={props.color ?? 'white'}
             fw={props.strong ? 'bold' : 'normal'}
@@ -20,6 +20,6 @@ export default function Text(props: Props) {
             onClick={props.onClick}
         >
             {props.text}
-        </Title>
+        </TitleField>
     )
 }

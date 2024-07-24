@@ -1,5 +1,5 @@
 import React from 'react'
-import Text from '../LowLevel/Title'
+import Title from '../LowLevel/Title'
 import { MantineSize, PasswordInput as PwdInput } from '@mantine/core'
 
 interface Props {
@@ -15,7 +15,7 @@ interface Props {
 export default function PasswordInput(props: Props) {
     return (
         <>
-            <Text text={props.text} />
+            <Title text={props.text} />
             <PwdInput
                 radius={props.radius}
                 placeholder={props.placeolder}

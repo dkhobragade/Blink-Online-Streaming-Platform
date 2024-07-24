@@ -4,7 +4,7 @@ import ElemsRow from '../LowLevel/ElemsRow'
 import TextInput from '../LowLevel/TextInput'
 import PasswordInput from '../LowLevel/PasswordInput'
 import Button from '../LowLevel/Button'
-import Text from '../LowLevel/Title'
+import Title from '../LowLevel/Title'
 import notify from '../../Themes/notify'
 import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
@@ -61,7 +61,7 @@ export default function SignUp() {
             }}
         >
             <ElemsRow spacing="lg">
-                <Text fontFamily="Georgia" text="Sign Up" color="#E50914" size={2} strong />
+                <Title fontFamily="Georgia" text="Sign Up" color="#E50914" size={2} strong />
                 <TextInput
                     value={initialVal.userName}
                     size="sm"
