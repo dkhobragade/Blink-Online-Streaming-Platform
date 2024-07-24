@@ -1,5 +1,5 @@
 import { Box } from '@mantine/core'
-import LoginBg from '../../Assets/LoginBg.jpg'
+import LoginBg from '../../Assets/BG.webp'
 import Login from './Login'
 import SignUp from './SignUp'
 
