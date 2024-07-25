@@ -561,17 +561,19 @@ export const List2 = [
     {
         id: '1',
         name: 'Hum do Humare Do',
+        titleImg: 'https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/1224/1721652801224-t',
         year: '2021',
         image: 'https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/838/1650838-i-afe211d3bb82',
         video: 'https://www.youtube.com/watch?v=t3efdEAkMgQ',
         posterImg: 'https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/7395/1713429987395-v',
         play: true,
         info: `Self-made man Dhruv and social media star Anya fall in love and decide to marry. Just one problem - he's an orphan. The only solution - make a fake family.`,
-        genre: 'Comedy,Drama,RomCOm'
+        genre: 'Comedy,Drama,RomCom'
     },
     {
         id: '2',
         name: 'Shiddat',
+        titleImg: 'https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/9508/1721641549508-t',
         year: '2021',
         image: 'https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/5934/1595934-i-1e582da15bca',
         video: 'https://www.youtube.com/watch?v=x60tMH7Pz9s',
@@ -583,6 +585,7 @@ export const List2 = [
     {
         id: '3',
         name: 'A GentalMan',
+        titleImg: 'https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/5291/1375291-t-62741bfe73f3',
         year: '2017',
         image: 'https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/5289/1375289-i-35bf701ac110',
         video: 'https://www.youtube.com/watch?v=fdg67eALOdo',
@@ -594,6 +597,7 @@ export const List2 = [
     {
         id: '4',
         name: 'Bang Bang',
+        titleImg: 'https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/2165/1372165-t-404fcd8202c2',
         year: '2014',
         image: 'https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/2163/1372163-i-8c9185c277c8',
         video: 'https://www.youtube.com/watch?v=MGXQ8bE6lW4',
@@ -605,6 +609,7 @@ export const List2 = [
     {
         id: '5',
         name: 'Samhaara',
+        titleImg: 'https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/7729/1387729-t-dabfba1ca8bc',
         year: '2018',
         image: 'https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/7727/1387727-i-a3d93df9594d',
         video: 'https://www.youtube.com/watch?v=6KOmRJd5M7M',
@@ -616,6 +621,7 @@ export const List2 = [
     {
         id: '6',
         name: 'Sanman Re',
+        titleImg: 'https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/995/1370995-t-3f1767cf619d',
         year: '2016',
         image: 'https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/993/1370993-i-f9778b2e7eca',
         video: 'https://www.youtube.com/watch?v=fvQZkpnb764',
@@ -627,6 +633,7 @@ export const List2 = [
     {
         id: '7',
         name: 'Babli Bouncer',
+        titleImg: 'https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/8745/1608745-t-9b1c9d7b49f9',
         year: '2022',
         image: 'https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/7731/1577731-i-bb0b00ef0e82',
         video: 'https://www.youtube.com/watch?v=uShGv52y6no',

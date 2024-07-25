@@ -16,16 +16,17 @@
     justify-content: end;
     align-items: end;
     height: 100%;
+    width: 100%;
     position: absolute;
-    margin-bottom: 100px;
+    margin-bottom: 8.438rem;
 }
 
 .innerMost_box  {
     cursor: pointer;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     width: 8rem;
-    margin: 0 5px;
+    margin: 0 0.313rem;
 }
 
 .zIndex{

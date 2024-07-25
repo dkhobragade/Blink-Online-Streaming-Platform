@@ -1,16 +1,54 @@
-import { Box, Flex, Image, } from '@mantine/core';
-import { useState } from 'react';
+import { Box, Image, } from '@mantine/core';
+import { useEffect, useState } from 'react';
 import FlexContainer from './FlexContainer';
 import { List2 } from '../../constant';
 import { MediaPlayer, MediaProvider } from '@vidstack/react';
-import { IconVolume, IconVolumeOff } from '@tabler/icons-react';
+import { IconPointFilled, IconVolume, IconVolumeOff } from '@tabler/icons-react';
+import ElemsRow from './ElemsRow';
+import Text from './Text';
+import Button from './Button';
 
-const TestCarousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [backgroundImage, setBackgroundImage] = useState(List2[0].image);
-  const [currentVideo, setCurrentVideo] = useState(List2[0].video)
+interface VideoStatus {
+  video: string,
+  sound: boolean,
+  titleImg: string,
+  year: string,
+  info: string,
+  genre: string,
+}
 
-  const prevItem = (index: any) => {
+export default function TestCarousel() {
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [currentState, setCurrentState] = useState<VideoStatus>({} as VideoStatus)
+  const [showControls, setShowControls] = useState<boolean>(false)
+
+  useEffect(() => {
+    setCurrentState({
+      video: List2[0].video,
+      sound: true,
+      titleImg: List2[0].titleImg,
+      year: List2[0].year,
+      info: List2[0].info,
+      genre: List2[0].genre,
+    })
+  }, [])
+
+  useEffect(() => {
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  })
+
+  const handleFullscreenChange = () => {
+    if (document.fullscreenElement === document.getElementById('videoRef')) {
+      setShowControls(true);
+    } else {
+      setShowControls(false);
+    }
+  };
+
+  const prevItem = (index: number) => {
     if (index === 0) {
       setCurrentIndex((prevIndex) => (prevIndex - 1 + List2.length) % List2.length);
     }
@@ -20,12 +58,9 @@ const TestCarousel = () => {
   };
 
   const getDisplayedItems = () => {
-    const totalItems = List2.length;
-    if (totalItems <= 3) {
-      return List2;
-    }
-
     const itemsToShow = [];
+    const totalItems = List2.length;
+
     for (let i = 0; i < 3; i++) {
       itemsToShow.push(List2[(currentIndex + i) % totalItems]);
     }
@@ -33,52 +68,95 @@ const TestCarousel = () => {
     return itemsToShow;
   };
 
-  const handleImageClick = (index: any) => {
-    setBackgroundImage(List2[index - 1].image);
-    setCurrentVideo(List2[index - 1].video)
+  const handleImageClick = (index: string) => {
+    const item = List2[Number(index) - 1];
+    setCurrentState({
+      video: item.video,
+      sound: item.play,
+      titleImg: item.titleImg,
+      year: item.year,
+      info: item.info,
+      genre: item.genre,
+    });
   };
 
-  const toggleSound = (id?: any) => {
-    // const updatedList = carouselList.map((item) => ({
-    //     ...item,
-    //     play: id ? item.id !== id : true
-    // }));
-    // setCarouselList(updatedList);
+  const toggleSound = () => {
+    setCurrentState((prevState) => ({ ...prevState, sound: !prevState.sound }));
   }
+
+  const renderVolumeIcons = () => {
+    return <Box className='volumns zIndex'>
+      {currentState.sound ? (
+        <IconVolumeOff className='pointer' color='white' onClick={toggleSound} size={24} />
+      ) : (
+        <IconVolume className='pointer' color='white' onClick={toggleSound} size={24} />
+      )}
+    </Box>
+  }
+
+  const handleWatchNow = async () => {
+    const videoElement = document.getElementById('videoRef');
+
+    if (videoElement) {
+      try {
+        if (videoElement.requestFullscreen) {
+          await videoElement.requestFullscreen();
+          setCurrentState((prev) => ({ ...prev, sound: false }))
+        }
+      } catch (error) {
+        console.error('Failed to enter fullscreen:', error);
+      }
+    }
+  }
+
+
 
   const getInsideBox = () => {
     return (
-      <Box className='inner_box zIndex' >
-        <Flex>
-          {getDisplayedItems().map((item, index) => (
-            <Box
-              key={index}
-              className='innerMost_box'
-            >
-              <Image src={item.image} onClick={() => {
-                prevItem(index)
-                handleImageClick(item.id)
-              }} />
-            </Box>
-          ))}
-        </Flex>
-          <FlexContainer alignItems="end" justifyContent="end" >
-            <Box className='volumns zIndex'>
-              {currentIndex ? (
-                <IconVolumeOff className='pointer' color='white' onClick={() => toggleSound(currentIndex)} size={24} />
-              ) : (
-                <IconVolume className='pointer' color='white' onClick={() => toggleSound()} size={24} />
-              )}
+      <Box className='inner_box zIndex'>
+        <ElemsRow numCols={2} padding={10} >
+          <FlexContainer justifyContent='start' alignItems='start'>
+            <Box w='100%' h={250}>
+              <ElemsRow>
+                <Box>
+                  <Image w={200} h={100} style={{ objectFit: 'contain' }} src={currentState.titleImg} />
+                </Box>
+                <Box w={40}>
+                  <ElemsRow numCols={2}>
+                    <IconPointFilled fill='white' />
+                    <Text text={currentState.year} />
+                  </ElemsRow>
+                </Box>
+                <Text text={currentState.info} />
+                <Text text={currentState.genre?.split(',').join(' | ')} />
+                <Button border={false} text='Watch Now !' width={200} bgColor='white' textColor='black' onClick={handleWatchNow} />
+              </ElemsRow>
             </Box>
           </FlexContainer>
+          <FlexContainer alignItems="end" justifyContent="end" >
+            {renderVolumeIcons()}
+            <FlexContainer gap='0' alignItems="end" justifyContent="end">
+              {getDisplayedItems().map((item, index) => (
+                <Box
+                  key={index}
+                  className='innerMost_box'
+                >
+                  <Image src={item.image} onClick={() => {
+                    prevItem(index)
+                    handleImageClick(item.id)
+                  }} />
+                </Box>
+              ))}
+            </FlexContainer>
+          </FlexContainer>
+        </ElemsRow>
       </Box>
     );
   };
 
   return (
     <Box className='outer_box'>
-      {/* <Image src={backgroundImage} className='img_box' /> */}
-      <MediaPlayer loop muted={true} autoPlay={true} src={`${currentVideo}?vq=hd720`} >
+      <MediaPlayer id='videoRef' loop muted={currentState.sound} controls={showControls} autoPlay={true} src={`${currentState.video}?vq=1080p`} >
         <MediaProvider >
         </MediaProvider>
       </MediaPlayer>
@@ -88,5 +166,3 @@ const TestCarousel = () => {
     </Box>
   );
 };
-
-export default TestCarousel;
