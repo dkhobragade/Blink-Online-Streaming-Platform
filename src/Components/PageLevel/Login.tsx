@@ -66,6 +66,12 @@ export default function Login() {
         navigate('/signUp')
     }
 
+    const handleKeyDown = (e: any) => {
+        if (e.key === 'Enter') {
+            onSignInClick();
+        }
+    };
+
     return (
         <Card
             p={rem(30)}
@@ -92,6 +98,7 @@ export default function Login() {
                         radius="lg"
                         onChange={(e) => onPasswordChange(e)}
                         text="Password"
+                        onKeyDown={handleKeyDown}
                     />
                     <Button
                         radius="lg"
