@@ -1,45 +1,51 @@
 import {
-    DesktopOutlined,
-    HomeOutlined,
-    MenuUnfoldOutlined,
-    MinusCircleOutlined,
-    SearchOutlined,
-    UserOutlined,
-} from '@ant-design/icons'
+    IconCategory,
+    IconDeviceTv,
+    IconHome,
+    IconMovie,
+    IconOlympics,
+    IconSearch,
+    IconUser,
+} from '@tabler/icons-react'
 
-export const menuItem = ([] = [
+export const MenuList = [
     {
-        icon: <UserOutlined />,
-        title: 'My Space',
-        key: '',
-    },
-    {
-        icon: <SearchOutlined />,
-        title: 'Search',
-        key: '',
-    },
-    {
-        icon: <HomeOutlined />,
-        title: 'Home',
-        key: '',
-    },
-    {
-        icon: <DesktopOutlined />,
-        title: 'TV',
-        key: '',
-    },
-    {
-        icon: <MinusCircleOutlined />,
-        title: 'Movies',
-        key: '',
-    },
-    {
-        icon: <MenuUnfoldOutlined />,
-        title: 'Categories',
-        key: '',
-    },
-])
+        id: '1',
+        icon: <IconUser stroke="white" fill="white" className='pointer' />,
+        label: 'User'
 
+    },
+    {
+        id: '2',
+        icon: <IconSearch stroke="white" fill="white" className='pointer' />,
+        label: 'Search'
+    },
+    {
+        id: '3',
+        icon: <IconHome stroke="white" fill="white" className='pointer' />,
+        label: 'Home'
+    },
+    {
+        id: '4',
+        icon: <IconDeviceTv stroke="white" fill="white" className='pointer' />,
+        label: 'TV'
+    },
+    {
+        id: '5',
+        icon: <IconMovie stroke="white" fill="white" className='pointer' />,
+        label: 'Movie'
+    },
+    {
+        id: '6',
+        icon: <IconOlympics stroke="white" fill="white" className='pointer' />,
+        label: 'Sport'
+    },
+    {
+        id: '7',
+        icon: <IconCategory stroke="white" fill="white" className='pointer' />,
+        label: 'Categories'
+    },
+]
 export const api_key = '5c61281db1640e948982784ce33529dc'
 
 export const https = 'https://api.themoviedb.org/3/'

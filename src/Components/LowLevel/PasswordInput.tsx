@@ -10,6 +10,7 @@ interface Props {
     text: string
     value?: string
     radius?: MantineSize
+    onKeyDown?: (e: any) => void
 }
 
 export default function PasswordInput(props: Props) {
@@ -22,6 +23,7 @@ export default function PasswordInput(props: Props) {
                 onChange={(e) => props.onChange(e)}
                 size={props.size}
                 value={props.value}
+                onKeyDown={props.onKeyDown}
             />
         </>
     )

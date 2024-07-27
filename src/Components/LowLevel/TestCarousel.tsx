@@ -7,18 +7,10 @@ import { IconPointFilled, IconVolume, IconVolumeOff } from '@tabler/icons-react'
 import ElemsRow from './ElemsRow';
 import Text from './Text';
 import Button from './Button';
-
-interface VideoStatus {
-  video: string,
-  sound: boolean,
-  titleImg: string,
-  year: string,
-  info: string,
-  genre: string,
-}
+import { VideoStatus } from '../../Types/types';
 
 export default function TestCarousel() {
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [currentIndex, setCurrentIndex] = useState<number>(0)
   const [currentState, setCurrentState] = useState<VideoStatus>({} as VideoStatus)
   const [showControls, setShowControls] = useState<boolean>(false)
 

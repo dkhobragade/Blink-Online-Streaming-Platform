@@ -19,7 +19,7 @@ export default function PageLayout() {
 
     return (
         <AppShell
-            // withBorder={false}
+            withBorder={false}
             // padding="md"
             navbar={{
                 width: rem(60),
@@ -27,7 +27,7 @@ export default function PageLayout() {
                 collapsed: { mobile: !mobileOpened, desktop: false },
             }}
         >
-            <AppShell.Navbar style={{ backgroundColor: '#101010' }}>
+            <AppShell.Navbar style={{ backgroundColor: '#101820ff' }}>
                 <MenuList />
             </AppShell.Navbar>
             <AppShell.Main style={{ backgroundColor: '#0F1014' }}>
