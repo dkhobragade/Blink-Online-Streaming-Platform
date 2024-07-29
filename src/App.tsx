@@ -14,7 +14,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<LoginWeiget url={pathName} />} />
                 <Route path='/signUp' element={<LoginWeiget url={pathName} />} />
-                <Route path="/homepage" element={<PageLayout />} />
+                <Route path="/homepage/*" element={<PageLayout />} />
             </Routes>
         </>
     )

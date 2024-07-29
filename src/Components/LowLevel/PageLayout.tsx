@@ -2,11 +2,14 @@ import { AppShell, rem } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { useState } from 'react'
 import MenuList from './MenuList'
-import Content from '../PageLevel/Content'
+import { routerList } from '../../Routes/Routes'
+import { useAtomValue } from 'jotai'
+import { selectedId } from '../../Atom/atom'
 
 export default function PageLayout() {
     const [isNavBarOpen, setIsNavBarOpen] = useState<boolean>(false)
     const [mobileOpened, { toggle: toggleMobile }] = useDisclosure()
+    const selectedID = useAtomValue(selectedId)
 
     const onMouseLeave = () => {
         setIsNavBarOpen(false)
@@ -14,6 +17,11 @@ export default function PageLayout() {
 
     const onMouseEnter = () => {
         setIsNavBarOpen(true)
+    }
+
+    const renderMain = () => {
+        const selectedItem = routerList.find((item) => item.id === selectedID);
+        return selectedItem ? selectedItem.page : null
     }
 
 
@@ -31,7 +39,7 @@ export default function PageLayout() {
                 <MenuList />
             </AppShell.Navbar>
             <AppShell.Main style={{ backgroundColor: '#0F1014' }}>
-                <Content />
+                {renderMain()}
             </AppShell.Main>
         </AppShell>
     )
