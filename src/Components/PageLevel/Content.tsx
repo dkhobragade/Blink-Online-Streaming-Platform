@@ -2,12 +2,12 @@ import Carousel from '../LowLevel/Carousel'
 import { carouselList, CarouselListData, List2, tvList } from '../../constant';
 import CarouselList from '../LowLevel/CarouselList';
 import { Box } from '@mantine/core';
-import TestCarousel from '../LowLevel/TestCarousel';
+import MainCarousel from '../LowLevel/MainCarousel';
 
 export default function Content() {
 
     return (
-        <TestCarousel/>
+        <MainCarousel />
         // <Box>
         //     <Carousel children={carouselList} />
         //     <CarouselList children={CarouselListData} title='Recommend' />
