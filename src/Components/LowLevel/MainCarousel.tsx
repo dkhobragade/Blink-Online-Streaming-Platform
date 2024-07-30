@@ -9,7 +9,7 @@ import Text from './Text';
 import Button from './Button';
 import { VideoStatus } from '../../Types/types';
 
-export default function TestCarousel() {
+export default function MainCarousel() {
   const [currentIndex, setCurrentIndex] = useState<number>(0)
   const [currentState, setCurrentState] = useState<VideoStatus>({} as VideoStatus)
   const [showControls, setShowControls] = useState<boolean>(false)
